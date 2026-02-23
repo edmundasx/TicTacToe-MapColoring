@@ -1,0 +1,12 @@
+step,depth,event,var,val,assignment
+2,1,ASSIGN,Panevezio,R,{'Panevezio': 'R'}
+4,2,ASSIGN,Utenos,G,"{'Panevezio': 'R', 'Utenos': 'G'}"
+6,3,ASSIGN,Vilniaus,B,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B'}"
+8,4,ASSIGN,Kauno,G,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G'}"
+10,5,ASSIGN,Šiauliai,B,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B'}"
+12,6,ASSIGN,Alytaus,R,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B', 'Alytaus': 'R'}"
+14,7,ASSIGN,Taurages,R,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B', 'Alytaus': 'R', 'Taurages': 'R'}"
+16,8,ASSIGN,Telšiai,G,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B', 'Alytaus': 'R', 'Taurages': 'R', 'Telšiai': 'G'}"
+18,9,ASSIGN,Klaipedos,B,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B', 'Alytaus': 'R', 'Taurages': 'R', 'Telšiai': 'G', 'Klaipedos': 'B'}"
+20,10,ASSIGN,Marijampoles,B,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B', 'Alytaus': 'R', 'Taurages': 'R', 'Telšiai': 'G', 'Klaipedos': 'B', 'Marijampoles': 'B'}"
+21,10,GOAL,,,"{'Panevezio': 'R', 'Utenos': 'G', 'Vilniaus': 'B', 'Kauno': 'G', 'Šiauliai': 'B', 'Alytaus': 'R', 'Taurages': 'R', 'Telšiai': 'G', 'Klaipedos': 'B', 'Marijampoles': 'B'}"

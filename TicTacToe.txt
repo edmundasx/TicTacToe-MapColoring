@@ -1,0 +1,31 @@
+1. Sukuriamas game objektas -> Jame nurodomos žaidimo taisyklės ir ypatybės -> Paleidžia play_game funkcija pradedanti matcha
+2. play_game sukuria pradinę būseną su tuščia lenta, paleidžiamas while ciklas iš kiekvieno žaidėjo minimax funkcijos gražinantis ėjimą:
+move = player_fn(self, state)
+
+O ėjimas įrašomas kaip naują būsena:
+state = self.result(state, move)
+
+Šis ciklas vyksta iki terminal_test gražins true, kad žaidimas pasiekė pabaigą.
+
+3.  Žaidėjo funkcija minimax:
+    1) Nustato esamos būsenos žaidėjo eilę
+    2) Nustato legal moves
+    3) Filtravimas -> Lambda funkcija kiekvienam legaliam veiksmui iš esamos būsenos paleidžia min_value funkcija, simuliuodama priešininko optimaliausią ėjimą.
+    4) Čia prasideda rekursija min_value funkcijoje:
+        1) Tikrina ar tenkinama žaidimo pabaigos sąlyga. Jei taip gražina įvertinimą.
+        2) Jei ne paleidžiamas ciklas esamos būsenos legaliems ėjimams, čia formuojamas STEKAS LIFO
+        3) Įvertinant priešininko (min) optimaliausią ėjimą iškviečiama max_value funkcija ir taip papildomas STEKAS.(max value funkcijai perduodama simuliuojama busena per game.result pritaikius veiksmus)
+        4) Max_value vertina dabartinio žaidėjo optimaliausią ėjimą (max), atlieka tas pačias galinės būsenos patikrinimo funkcijas.
+        5) Dar kartą iškviečiama min_value funkciją ir einama gilyn kol vis kintant busenai pacioje pradzioje tenkinama game.terminal_test(busena) salyga.
+        6) Cia prasideda steko atlaisvinimas, perduodamos reiksmes i zemesnius kintamuju lygius.
+    5) Grįžtama į lambda funkcija ir čia darbas tesiamas kitam veiksmui, jei šiame etape gaunasi taip, kad yra kelios lygios reikšmės, python pagal nutylėjimą renkasi pati pirmiausią.
+
+Rekursijos steke min_value naudoja alpha kaip „reikšmingumo slenkstį“.
+Jei ji randa ėjimą, kuris Max situaciją padaro blogesnę nei jau turimas geriausias Max pasirinkimas, ji nustoja skaičiuoti, nes ta šaka tampa nebereikšminga galutiniam sprendimui.
+
+
+minimax_decision entry,
+return max(moves, key=...),
+max_value entry,
+terminal_test/utility return,
+s2=game.result(state,a)

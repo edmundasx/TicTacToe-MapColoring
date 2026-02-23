@@ -1,0 +1,166 @@
+[
+  {
+    "step": 2,
+    "depth": 1,
+    "event": "ASSIGN",
+    "var": "Panevezio",
+    "val": "R",
+    "assignment": {
+      "Panevezio": "R"
+    }
+  },
+  {
+    "step": 4,
+    "depth": 2,
+    "event": "ASSIGN",
+    "var": "Utenos",
+    "val": "G",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G"
+    }
+  },
+  {
+    "step": 6,
+    "depth": 3,
+    "event": "ASSIGN",
+    "var": "Vilniaus",
+    "val": "B",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B"
+    }
+  },
+  {
+    "step": 8,
+    "depth": 4,
+    "event": "ASSIGN",
+    "var": "Kauno",
+    "val": "G",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G"
+    }
+  },
+  {
+    "step": 10,
+    "depth": 5,
+    "event": "ASSIGN",
+    "var": "Šiauliai",
+    "val": "B",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B"
+    }
+  },
+  {
+    "step": 12,
+    "depth": 6,
+    "event": "ASSIGN",
+    "var": "Alytaus",
+    "val": "R",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B",
+      "Alytaus": "R"
+    }
+  },
+  {
+    "step": 14,
+    "depth": 7,
+    "event": "ASSIGN",
+    "var": "Taurages",
+    "val": "R",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B",
+      "Alytaus": "R",
+      "Taurages": "R"
+    }
+  },
+  {
+    "step": 16,
+    "depth": 8,
+    "event": "ASSIGN",
+    "var": "Telšiai",
+    "val": "G",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B",
+      "Alytaus": "R",
+      "Taurages": "R",
+      "Telšiai": "G"
+    }
+  },
+  {
+    "step": 18,
+    "depth": 9,
+    "event": "ASSIGN",
+    "var": "Klaipedos",
+    "val": "B",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B",
+      "Alytaus": "R",
+      "Taurages": "R",
+      "Telšiai": "G",
+      "Klaipedos": "B"
+    }
+  },
+  {
+    "step": 20,
+    "depth": 10,
+    "event": "ASSIGN",
+    "var": "Marijampoles",
+    "val": "B",
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B",
+      "Alytaus": "R",
+      "Taurages": "R",
+      "Telšiai": "G",
+      "Klaipedos": "B",
+      "Marijampoles": "B"
+    }
+  },
+  {
+    "step": 21,
+    "depth": 10,
+    "event": "GOAL",
+    "var": null,
+    "val": null,
+    "assignment": {
+      "Panevezio": "R",
+      "Utenos": "G",
+      "Vilniaus": "B",
+      "Kauno": "G",
+      "Šiauliai": "B",
+      "Alytaus": "R",
+      "Taurages": "R",
+      "Telšiai": "G",
+      "Klaipedos": "B",
+      "Marijampoles": "B"
+    }
+  }
+]

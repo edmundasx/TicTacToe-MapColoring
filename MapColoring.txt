@@ -1,0 +1,37 @@
+1. Pagrindinėje funkcijoje solve_map_coloring iškviečiama csp.backtracking_search,
+kuriai kaip parametras perduodamas CSP objektas (pvz., MapColoringCSP/CSP instancija),
+aprašantis regionus (kintamuosius), jų domenus (spalvas), kaimynystės apribojimus ir apribojimų funkciją.
+
+2. csp.backtracking_search pradeda rekursyviai konstruoti assignment (žemėlapį) regionas -> spalva.
+Kiekviename žingsnyje parenkamas dar nepriskirtas kintamasis var (regionas) iš CSP objekto,
+dažniausiai naudojant select_unassigned_variable su MRV.
+Tada order_domain_values grąžina galimų value (spalvų) sąrašą tam regionui, surikiuotą pagal LCV heuristiką (mažiausiai apribojanti reikšmė).
+
+3. Kiekvienai galimai spalvai atliekamas patikrinimas csp.nconflicts(var, value, assignment): jei konfliktų skaičius yra 0,
+priskyrimas var:value->assignment ir tęsiama paieška; jei > 0, ši spalva atmetama.
+
+4. Atlikus priskyrima išsaugomas šis žingsnis atstatymui per šią funkciją:  removals = csp.suppose(var, value)
+
+5. Tada įvyksta „forward_checking“ patikrinimas, kurio metu peržiūrimi kintamojo kaimynai ir, atnaujinant „curr_domains“, pašalinamos negalimos spalvos.
+Jei kuriam nors kaimynui nebelieka galimų spalvų, grįžtama atgal naudojant „restore“ ir „unassign“ funkcijas bei bandoma nauja spalva.
+
+6. Jei iference gražina atsakymą - true, tada pradedama rekursija ir steko formavimas:  result = backtrack(assignment),
+perduoda esamą dalinį priskyrimą į gilesnį rekursijos lygį; funkcija grįžta tik tada, kai randa pilną sprendinį (grąžina assignment) arba kai šaka žlunga (grąžina None).
+
+7. Kaip įprasta rekursiniam backtracking’ui, galinės būsenos (sprendinio) tikrinimas vyksta pačioje backtrack pradžioje: len(assignment) == len(csp.variables) patikrina, ar visi regionai jau turi priskirtą spalvą.
+Jei taip, funkcija grąžina pilną assignment (dict tipo priskyrimą regionas -> spalva).
+
+8. Reikia pabrėžti, kad paskutiniame lygyje kai pasiekiama goal state funkcija gražindama rezultatą aktyvuoja:
+
+     if result is not None:
+                    return result
+
+Taip uždarydama stekus.
+
+backtracking_search (5):
+backtracking_search entry,
+goal test len(assignment)==len(csp.variables),
+var=select_unassigned_variable(...),
+csp.nconflicts(var,value,assignment)==0,
+result=backtrack(assignment) / if result is not None: return result
+
